@@ -33,6 +33,7 @@ namespace FindHeight
             if (Counter < Max)
             {
                 Max = Counter;
+            
             }
             
             //checks to see if root is null
@@ -60,11 +61,11 @@ namespace FindHeight
                     FindHeight(node.RightChild);
                 }
             }
-                //if left and right are null retuen the max + 1♂
-            else
-            {
+                //if left and right are null retuen the max + 1
+           
+            
                 return Max + 1;
-            }
+            
         }
     }
 }
