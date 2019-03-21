@@ -12,10 +12,10 @@ namespace FindHeight
 
             //building of the tree
             Node node = new Node(0);
-            node.LeftChild = new Node(0);
-            node.RightChild = new Node(0);
-            node.LeftChild.LeftChild = new Node(0);
-            node.LeftChild.LeftChild.LeftChild = new Node(0);
+            node.LeftChild = new Node(1);
+            node.RightChild = new Node(2);
+            node.LeftChild.LeftChild = new Node(3);
+            node.LeftChild.LeftChild.LeftChild = new Node(4);
 
             // outputs the max tree height
             Console.WriteLine(FindLevel(node));
@@ -32,7 +32,7 @@ namespace FindHeight
             //counter value will replace Level value if it is a larger value
             if (Counter < Level)
             {
-                Level = Counter;
+                Counter = Level;
             
             }
             
@@ -42,7 +42,7 @@ namespace FindHeight
                 return 0;
             }
             // adds to counter when hit
-            Counter ++; 
+             Counter ++; 
 
             //runs until node equals null
             if (node.Root != null)
@@ -63,9 +63,7 @@ namespace FindHeight
             }
                 //if left and right are null retuen the Level + 1
                 return Level + 1; 
-           
-            
-            
+              
         }
     }
 }
