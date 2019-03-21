@@ -9,6 +9,13 @@ namespace FindHeight
         public Node RightChild { get; set; }
         public Node LeftChild { get; set; }
         public int Value { get; set; }
+        public Node Root { get; set; }
+
+    public Node()
+    {
 
     }
+
+   }
+
 }
