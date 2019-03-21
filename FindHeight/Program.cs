@@ -6,38 +6,38 @@ namespace FindHeight
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
 
             //building of the tree
-            Node root = new Node(0);
-            root.LeftChild = new Node(0);
-            root.RightChild = new Node(0);
-            root.LeftChild.LeftChild = new Node(0);
-            root.LeftChild.LeftChild.LeftChild = new Node(0);
+            Node node = new Node(0);
+            node.LeftChild = new Node(0);
+            node.RightChild = new Node(0);
+            node.LeftChild.LeftChild = new Node(0);
+            node.LeftChild.LeftChild.LeftChild = new Node(0);
 
             // outputs the max tree height
-            Console.WriteLine(FindHeight(Max));
+            Console.WriteLine(FindLevel(node));
         }
 
         //traverses the tree to
-        public int FindHeight(Tree node)
+        public static int FindLevel(Node node)
         {
             // number of traversals
             int Counter = 0;
-            // max height so far
-            int Max = 0;
+            // Level Level so far
+            int Level = 0;
 
-            //counter value will replace max value if it is a larger value
-            if (Counter < Max)
+            //counter value will replace Level value if it is a larger value
+            if (Counter < Level)
             {
-                Max = Counter;
+                Level = Counter;
             
             }
             
             //checks to see if root is null
-            if (node.Root = null)
+            if (node == null)
             {
                 return 0;
             }
@@ -51,20 +51,20 @@ namespace FindHeight
                 if (node.LeftChild != null)
                 {
                     // if not null run the method again
-                    FindHeight(node.LeftChild);
+                    FindLevel(node.LeftChild);
                 }
 
                 //checks to see if right child equal null
                 if (node.RightChild != null)
                 {
                     //if not null run the method again
-                    FindHeight(node.RightChild);
+                    FindLevel(node.RightChild);
                 }
             }
-                //if left and right are null retuen the max + 1
+                //if left and right are null retuen the Level + 1
+                return Level + 1; 
            
             
-                return Max + 1;
             
         }
     }
