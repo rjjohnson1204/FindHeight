@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FindHeight
+namespace FindHeight.Classes
 {
    public class Node
     {
