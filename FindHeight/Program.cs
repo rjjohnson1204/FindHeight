@@ -11,14 +11,23 @@ namespace FindHeight
             Console.WriteLine("Hello World!");
 
             //building of the tree
-            Node node = new Node(0);
-            node.LeftChild = new Node(1);
-            node.RightChild = new Node(2);
-            node.LeftChild.LeftChild = new Node(3);
-            node.LeftChild.LeftChild.LeftChild = new Node(4);
+            Node root = new Node(0);
+            root.LeftChild = new Node(1);
+            root.RightChild = new Node(2);
+            root.RightChild.LeftChild = new Node(8);
+            root.RightChild.RightChild = new Node(9);
+            root.RightChild.RightChild.LeftChild = new Node(11);
+            root.RightChild.RightChild.LeftChild.LeftChild = new Node(22);
+            root.RightChild.RightChild.LeftChild.LeftChild.LeftChild = new Node(33);
+            root.RightChild.RightChild.LeftChild.LeftChild.LeftChild.RightChild = new Node(44);
+            root.RightChild.RightChild.LeftChild.LeftChild.LeftChild.RightChild.LeftChild = new Node(55);
+            root.RightChild.RightChild.RightChild = new Node(99);
+            root.RightChild.RightChild.RightChild.RightChild = new Node(101);
+            root.LeftChild.LeftChild = new Node(3);
+            root.LeftChild.LeftChild.LeftChild = new Node(4);
 
-            // outputs the max tree height
-            Console.WriteLine(FindLevel(node));
+            // writes the numer of levels of the tree
+            Console.WriteLine(FindLevel(root));
         }
 
         //traverses the tree to
@@ -32,8 +41,7 @@ namespace FindHeight
             //counter value will replace Level value if it is a larger value
             if (Counter < Level)
             {
-                Counter = Level;
-            
+                Level = Counter;
             }
             
             //checks to see if root is null
