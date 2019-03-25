@@ -11,30 +11,51 @@ namespace FindHeight
             Console.WriteLine("Hello World!");
 
             //building of the tree
-            Node node = new Node(0);
-            node.LeftChild = new Node(1);
-            node.RightChild = new Node(2);
-            node.RightChild.LeftChild = new Node(8);
-            node.RightChild.RightChild = new Node(9);
-            node.RightChild.RightChild.LeftChild = new Node(11);
-            node.RightChild.RightChild.LeftChild.LeftChild = new Node(22);
-            //node.RightChild.RightChild.LeftChild.LeftChild.LeftChild = new Node(33);
-            //node.RightChild.RightChild.LeftChild.LeftChild.LeftChild.RightChild = new Node(44);
-            //node.RightChild.RightChild.LeftChild.LeftChild.LeftChild.RightChild.LeftChild = new Node(55);
-            //node.RightChild.RightChild.RightChild = new Node(99);
-            //node.RightChild.RightChild.RightChild.RightChild = new Node(101);
-            //node.LeftChild.LeftChild = new Node(3);
-            //node.LeftChild.LeftChild.LeftChild = new Node(4);
+            // node 0
+            Node node = new Node(1);
+           
+            Node node2 = new Node(2);
+            Node node3 = new Node(3);
+            Node node4 = new Node(4);
+
+            Node node5 = new Node(5);
+            Node node6 = new Node(6);
+            Node node7 = new Node(7);
+
+            Node node8 = new Node(8);
+            Node node9 = new Node(9);
+
+
+            // (level 2)
+            node.LeftChild = node2;
+            node.RightChild = node3;
+
+            // level 3
+            node3.LeftChild = node4;
+            node3.RightChild = node5;
+
+            // level 4
+            node5.LeftChild = node6;
+
+            // level 5
+            node6.LeftChild = node7;
+
+            // level 6
+            node7.RightChild = node8;
+
+            //Level 7
+            node8.LeftChild = node9; 
+            
 
             // writes the number of levels of the tree
-            Console.WriteLine(FindLevel(node, 0));
-             Console.ReadLine();
+            Console.WriteLine(FindLevel(node, 1));
+            Console.ReadLine();
         }
 
         public static int FindLevel(Node node, int Count)
         {
             // number of traversals
-            int Counter = Count + 1;
+          //  int Counter = Count;
             // Level Level so far
             //int Max = 0;
             //counter value will replace Level value if it is a larger value
@@ -44,67 +65,65 @@ namespace FindHeight
             //}
 
             //checks to see if root is null
-            Count++;
 
-            if (node == null)
+            if (node.LeftChild == null && node.RightChild == null)
             {
-                return 0;
+                return Count;
             }
-            // adds to counter when hit
-            //runs until node equals null
-            //int left = (FindLevel(node.LeftChild, Counter +1));
-            //int right = (FindLevel(node.RightChild, Counter +1));
+           
 
             // check to see if left child equals null
             if (node.LeftChild != null)
             {
                 // if not null run the method again
-                Counter = FindLevel(node.LeftChild, Count ++);
+                Count = FindLevel(node.LeftChild, Count);
             }
 
             //checks to see if right child equal null
             if (node.RightChild != null)
             {
                 //if not null run the method again
-               Counter =  FindLevel(node.RightChild, Count ++);
+                Count = FindLevel(node.RightChild, Count);
             }
-                            
-             //returns max
-            //Count = Counter;
-             return Counter;
+
+            Count++;
+
+
+            //returns max
+            return Count;
 
         }
     }
 }
 
-        //public static int FindLevel(Node node, int Counter)
-        //{
+//public static int FindLevel(Node node, int Counter)
+//{
 
 
-        //    if (node == null)
-        //    {
-        //        return 0;
-        //    }
+//    if (node == null)
+//    {
+//        return 0;
+//    }
 
 
-        //    //if (node.LeftChild != null)
-        //    //{
-        //    //    FindLevel(node.LeftChild, Counter);
-        //    //}
+//    //if (node.LeftChild != null)
+//    //{
+//    //    FindLevel(node.LeftChild, Counter);
+//    //}
 
-        //    //if(node.RightChild != null)
-        //    //{
-        //    //    FindLevel(node.RightChild, Counter);
-        //    //}
+//    //if(node.RightChild != null)
+//    //{
+//    //    FindLevel(node.RightChild, Counter);
+//    //}
 
-        //    int leftHeight = FindLevel(node.LeftChild, +1);
-        //    int rightHeight = FindLevel(node.RightChild, +1);
+//    int leftHeight = FindLevel(node.LeftChild, +1);
+//    int rightHeight = FindLevel(node.RightChild, +1);
 
-        //    if (leftHeight > rightHeight) return leftHeight + 1; 
-        //    return rightHeight + 1;
+//    if (leftHeight > rightHeight) return leftHeight + 1; 
+//    return rightHeight + 1;
 
 
 
-    
-    
+
+
 
