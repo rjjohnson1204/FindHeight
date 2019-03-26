@@ -1,6 +1,7 @@
 using FindHeight.Classes;
 using System;
 using Xunit;
+using static FindHeight.Program;
 
 namespace TreeTest
 {
@@ -34,7 +35,7 @@ namespace TreeTest
         [Fact]
         public void RightChildValue()
         {
-            Node leftchild = new Node(5);
+            Node leftchild = new Node(10);
 
             int expected = 10;
 
@@ -43,9 +44,32 @@ namespace TreeTest
             Assert.Equal(expected, actual);
         }
         [Fact]
-        public void TreeLevel()
-        {
+        public void CanFindTwoLevels()
 
+        {
+            // level 1
+            Node node = new Node(1);
+
+            // level 2
+            Node node2 = new Node(2);
+            Node node3 = new Node(3);
+
+            node.LeftChild = node2;
+            node.RightChild = node3;
+
+            Assert.Equal(2, FindLevel(node, 1));
+
+        }
+
+        [Fact]
+        public void CanReturnRootLevel()
+
+        {
+            // level 1
+            Node node = new Node(1);
+
+
+            Assert.Equal(1, FindLevel(node, 1));
 
         }
 

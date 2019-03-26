@@ -5,7 +5,7 @@ using System;
 
 namespace FindHeight
 {
-    class Program
+   public class Program
     {
         public static void Main(string[] args)
         {
@@ -54,24 +54,12 @@ namespace FindHeight
 
         public static int FindLevel(Node node, int Count)
         {
-            // number of traversals
-          //  int Counter = Count;
-            // Level Level so far
-            //int Max = 0;
-            //counter value will replace Level value if it is a larger value
-            //if (Counter > Max)
-            //{
-            //    Max = Counter;
-            //}
-
             //checks to see if root is null
-
             if (node.LeftChild == null && node.RightChild == null)
             {
                 return Count;
             }
            
-
             // check to see if left child equals null
             if (node.LeftChild != null)
             {
