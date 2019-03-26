@@ -20,9 +20,35 @@ namespace TreeTest
         }
 
         [Fact]
+        public void LeftChildValue()
+        {
+            Node leftchild = new Node(5);
+
+            int expected = 5;
+
+            int actual = 5;
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void RightChildValue()
+        {
+            Node leftchild = new Node(5);
+
+            int expected = 10;
+
+            int actual = 10;
+
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
         public void TreeLevel()
         {
-            
+
+
         }
+
+
     }
 }

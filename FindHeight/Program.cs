@@ -12,7 +12,6 @@ namespace FindHeight
             Console.WriteLine("Hello World!");
 
             //building of the tree
-            // node 0
             Node node = new Node(1);
            
             Node node2 = new Node(2);
@@ -97,31 +96,6 @@ namespace FindHeight
     }
 }
 
-//public static int FindLevel(Node node, int Counter)
-//{
-
-
-//    if (node == null)
-//    {
-//        return 0;
-//    }
-
-
-//    //if (node.LeftChild != null)
-//    //{
-//    //    FindLevel(node.LeftChild, Counter);
-//    //}
-
-//    //if(node.RightChild != null)
-//    //{
-//    //    FindLevel(node.RightChild, Counter);
-//    //}
-
-//    int leftHeight = FindLevel(node.LeftChild, +1);
-//    int rightHeight = FindLevel(node.RightChild, +1);
-
-//    if (leftHeight > rightHeight) return leftHeight + 1; 
-//    return rightHeight + 1;
 
 
 
